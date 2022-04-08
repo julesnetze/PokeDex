@@ -34,4 +34,25 @@ namespace Pokedex.Controllers
 		public string name { get; set; }
 		public string url { get; set; }
 	}
+
+	public class Payload
+	{
+		public Payload(string text)
+		{
+			this.text = text;
+		}
+		public string text { get; set; }
+	}
+
+	public class Contents
+	{
+		public string translated { get; set; }
+		public string text { get; set; }
+		public string translation { get; set; }
+	}
+
+	public class TranslationResponse
+	{
+		public Contents contents { get; set; }
+	}
 }
