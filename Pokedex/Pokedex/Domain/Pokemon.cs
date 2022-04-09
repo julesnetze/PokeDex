@@ -2,17 +2,17 @@
 {
 	public class Pokemon
 	{
-		public string Name;
-		public string Description;
-		public string Habitat;
-		public bool IsLegendary;
+		public string name;
+		public string description;
+		public string habitat;
+		public bool isLegendary;
 
 		public Pokemon(string name, string description, string habitat, bool isLegendary)
 		{
-			Name = name;
-			Description = description;
-			Habitat = habitat;
-			IsLegendary = isLegendary;
+			this.name = name;
+			this.description = description;
+			this.habitat = habitat;
+			this.isLegendary = isLegendary;
 		}
 	}
 }
