@@ -15,8 +15,6 @@ namespace Pokedex.Controllers
 		[HttpGet]
 		public Pokemon GetPokemon([FromHeader] string pokemonName)
 		{
-			var controller = new PokedexController();
-
 			return GeneratePokemon(pokemonName, false).Result;
 		}
 
