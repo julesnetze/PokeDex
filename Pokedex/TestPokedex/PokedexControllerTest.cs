@@ -21,7 +21,7 @@ namespace TestPokedex
 
 		public PokedexControllerTest()
 		{
-			controller = new(new PokedexService());
+			controller = new(new PokemonSearchService());
 		}
 
 		//[Fact]
