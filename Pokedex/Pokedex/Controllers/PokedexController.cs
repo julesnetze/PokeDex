@@ -11,21 +11,20 @@ namespace Pokedex.Controllers
 	{
 		public IPokemonSearchService pokemonSearchService;
 		public ITranslationService translationService;
-		public PokedexController(IPokemonSearchService pokemonSearchService)
+		public PokedexController(IPokemonSearchService pokemonSearchService, ITranslationService translationService)
 		{
 			this.pokemonSearchService = pokemonSearchService;
+			this.translationService   = translationService;
 		}
 
 		[HttpGet("{pokemonName}")]
 		async public Task<ObjectResult> GetPokemon(string pokemonName, [FromQuery] bool funnyTranslation = false)
 		{
 			var pokemon = await pokemonSearchService.SearchPokemon(pokemonName);
-
 			if(pokemon != null)
 			{
-				if (funnyTranslation && (pokemon.isLegendary || pokemon.habitat == "cave")) pokemon.description = "";
-				var json = JsonConvert.SerializeObject(pokemon);
-				return Ok(json);
+				if(funnyTranslation) pokemon.description = await translationService.TranslatePokemonDescription(pokemon);
+				return Ok(JsonConvert.SerializeObject(pokemon));
 			}
 			else
 			{
