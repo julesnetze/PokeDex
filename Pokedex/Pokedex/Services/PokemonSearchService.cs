@@ -19,12 +19,11 @@ namespace Pokedex.Services
 
 			if(response.IsSuccessStatusCode)
 			{
-				var json = JsonConvert.DeserializeObject<PokemonPayload>(cont);
-				var text = json.flavor_text_entries.Find(entry => entry.language.name == "en").flavor_text;
-				var description = Regex.Replace(text, @"[^0-9a-zA-ZÀ-ȕ:,.]+", " ");
+				var pokemonPayload = JsonConvert.DeserializeObject<PokemonPayload>(cont);
+				var flavorText = pokemonPayload.flavor_text_entries.Find(entry => entry.language.name == "en").flavor_text;
+				var description = Regex.Replace(flavorText, @"[^0-9a-zA-ZÀ-ȕ:,.]+", " ");
 
-				var pokemon = new Pokemon(json.name, description, json.habitat.name, json.is_legendary);
-				return pokemon;
+				return new Pokemon(pokemonPayload.name, description, pokemonPayload.habitat.name, pokemonPayload.is_legendary);
 			}
 			else
 			{
