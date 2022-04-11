@@ -18,12 +18,12 @@ namespace Pokedex.Controllers
 		}
 
 		[HttpGet("{pokemonName}")]
-		async public Task<ObjectResult> GetPokemon(string pokemonName, [FromQuery] bool funnyTranslation = false)
+		async public Task<ObjectResult> GetPokemon(string pokemonName, [FromQuery] bool translation = false)
 		{
 			var pokemon = await pokemonSearchService.SearchPokemon(pokemonName);
 			if(pokemon != null)
 			{
-				if(funnyTranslation) pokemon.description = await translationService.TranslatePokemonDescription(pokemon);
+				if(translation) pokemon.description = await translationService.TranslatePokemonDescription(pokemon);
 				return Ok(JsonConvert.SerializeObject(pokemon));
 			}
 			else
