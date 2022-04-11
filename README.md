@@ -43,5 +43,5 @@ $ http://localhost:5000/pokemon/<pokemon name>
 
 ### Translated Pokemon Description
 ```console
-$ http://localhost:5000/pokemon/<pokemon name>?translation=(false or true)
+$ http://localhost:5000/pokemon/<pokemon name>?translation=true
 ```
