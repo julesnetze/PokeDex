@@ -32,3 +32,16 @@ $ dotnet test TestPokedex
 ```console
 $ dotnet run --project Pokedex
 ```
+
+## API Endpoints
+
+### Basic Pokemon Information
+
+```console
+$ http://localhost:5000/pokemon/<pokemon name>
+```
+
+### Translated Pokemon Description
+```console
+$ http://localhost:5000/pokemon/<pokemon name>?translation=(false or true)
+```
