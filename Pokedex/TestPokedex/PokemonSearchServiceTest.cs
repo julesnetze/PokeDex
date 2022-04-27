@@ -56,5 +56,13 @@ namespace TestPokedex
 			Assert.Equal(pikachuDescription, pokemon.description);
 			Assert.Equal(pikachuHabitat, pokemon.habitat);
 		}
+
+		[Fact]
+		async public void ShouldNotFindPokemonGivenInexistentPokemon()
+		{
+			var pokemon = await service.SearchPokemon("does not exist");
+
+			Assert.Null(pokemon);
+		}
 	}
 }
