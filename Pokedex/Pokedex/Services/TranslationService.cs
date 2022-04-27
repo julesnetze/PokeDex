@@ -37,7 +37,7 @@ namespace Pokedex.Services
 			response.Dispose();
 			content.Dispose();
 
-			return json.contents.translated;
+			return response.IsSuccessStatusCode ? json.contents.translated : textToTranslate;
 		}
 
 		private string CreateUrl(TranslationType translationType)
