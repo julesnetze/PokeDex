@@ -10,7 +10,7 @@ namespace TestPokedex
 		public string mewtwoHabitat = "rare";
 
 		public string steelixName = "steelix";
-		public string steelixDescription = "The iron it ingested with the soil it swallowed transformed its body and made it harder than diamonds.";
+		public string steelixDescription = "It is thought its body transformed as a result of iron accumulating internally from swallowing soil.";
 		public string steelixHabitat = "cave";
 
 		public string pikachuName = "pikachu";
