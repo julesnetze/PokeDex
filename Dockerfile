@@ -4,9 +4,9 @@ COPY . .
 
 WORKDIR /./Pokedex
 
-ENV DOTNET_URLS=http://+:5000
+ENV DOTNET_URLS=https://+:5001
 
-EXPOSE 8000:5000
+EXPOSE 5001
 
 RUN dotnet dev-certs https --trust
 
