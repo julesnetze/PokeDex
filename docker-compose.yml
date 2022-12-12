@@ -1,0 +1,7 @@
+services:
+  pokedex-api:
+    build: .
+    ports:
+      - '5001:5001'
+    environment:
+      - DOTNET_URLS=https://+:5001
