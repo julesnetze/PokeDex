@@ -43,10 +43,10 @@ $ docker compose up
 ### Basic Pokemon Information
 
 ```console
-$ http://localhost:5001/pokemon/<pokemon name>
+$ https://localhost:5001/pokemon/<pokemon name>
 ```
 
 ### Translated Pokemon Description
 ```console
-$ http://localhost:5001/pokemon/<pokemon name>?translation=true
+$ https://localhost:5001/pokemon/<pokemon name>?translation=true
 ```
