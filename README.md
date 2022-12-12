@@ -32,6 +32,11 @@ $ dotnet test TestPokedex
 ```console
 $ dotnet run --project Pokedex
 ```
+### Run the application with Docker
+
+```console
+$ docker compose up
+```
 
 ## API Endpoints
 
